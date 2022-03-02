@@ -1,16 +1,13 @@
 # 항해99 테스트
 
-## IDE
-
-- Visual Studio Code(venv not used)
-
-## server
-
-- Oracle Cloud : Linux(CentOS 8), Docker(compose)
-
 ## condition
 
 - [Notion - 항해99 6기(내일배움단, 이월자 대상 문제)](https://teamsparta.notion.site/99-6-1410a5c9c3eb48af8887f283a9e531bc)
+
+## services(~22.03.04 23:59)
+
+- version0 : [http://146.56.187.171:2000](http://146.56.187.171:2000/)
+- version1 : [http://146.56.187.171:3000](http://146.56.187.171:3000/)
 
 ## versions
 
@@ -18,7 +15,7 @@
 - version1 : using json
 - version2 : using memory(variables)
 
-## services(~22.03.04 23:59)
+## IDE & server
 
-- version0 : [http://146.56.187.171:2000](http://146.56.187.171:2000/)
-- version1 : [http://146.56.187.171:3000](http://146.56.187.171:3000/)
+- Visual Studio Code(venv not used)
+- Oracle Cloud : Linux(CentOS 8), Docker(compose)
