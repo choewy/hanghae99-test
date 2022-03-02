@@ -19,3 +19,20 @@
 
 - Visual Studio Code(venv not used)
 - Oracle Cloud : Linux(CentOS 8), Docker(compose)
+
+## docker-compose
+
+### version0
+
+```
+$ cd version0
+$ docker network create --gateway 172.0.0.1 --subnet 172.0.0.0/16 fmongo
+$ docker-compose up -d
+```
+
+### version1 or version2
+
+```
+$ cd version1 [or verions2]
+$ docker-compose up -d
+```
