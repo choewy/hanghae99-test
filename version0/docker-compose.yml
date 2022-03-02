@@ -1,0 +1,36 @@
+# compose version v2.2.3
+# docker network create --gateway 172.0.0.1 --subnet 172.0.0.0/16 fmongo
+
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./db:/data/db
+    ports:
+      - 7000:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    networks:
+      fmongo:
+        ipv4_address: 172.0.0.2
+
+  flask:
+    depends_on:
+      - mongo
+    build: ./app/
+    restart: always
+    ports:
+      - 2000:5000
+    networks:
+      fmongo:
+        ipv4_address: 172.0.0.3
+
+networks:
+  fmongo:
+    driver: bridge
+    external: true
+    internal: true

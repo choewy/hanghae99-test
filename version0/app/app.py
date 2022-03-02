@@ -1,14 +1,8 @@
 from flask import Flask, render_template, jsonify, request
-from src.utils.bsoup import BSoup
-from src.utils.mongo import MongoDB
-from dotenv import load_dotenv
-import os
+from utils.mongo import MongoDB
+from utils.bsoup import BSoup
 
-
-load_dotenv()
-port = os.environ.get("FLASK_PORT")
-uri = os.environ.get("MONGO_URI")
-mongodb = MongoDB(uri)
+db = MongoDB()
 b_soup = BSoup()
 app = Flask(__name__)
 
@@ -23,10 +17,10 @@ def read_memo():
     response = {'success': True}
 
     try:
-        response['rows'] = mongodb.find_many()
+        response['rows'] = db.find_many()
     except Exception as error:
         response['success'] = False
-        response['error'] = error
+        response['error'] = str(error)
     finally:
         return jsonify(response)
 
@@ -39,17 +33,17 @@ def post_memo():
         data = request.form
         url = data['url']
         meta = b_soup.scrap_meta_data(url)
-
-        mongodb.insert_one({
+        doc = {
             'title': meta['title'],
             'description': meta['description'],
             'image': meta['image'],
             'url': url,
             'comment': data['comment']
-        })
+        }
+        db.insert_one(doc)
     except Exception as error:
         response['success'] = False
-        response['error'] = error
+        response['error'] = str(error)
     finally:
         return jsonify(response)
 
@@ -57,17 +51,16 @@ def post_memo():
 @app.route("/delete", methods=["POST"])
 def post_delete():
     response = {'success': True}
-
     try:
         data = request.form
-        _id = data['_id']
-        mongodb.delete_one(_id)
+        _id = data["_id"]
+        db.delete_one(_id)
     except Exception as error:
         response['success'] = False
-        response['error'] = error
+        response['error'] = str(error)
     finally:
         return jsonify(response)
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=int(port), debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)
