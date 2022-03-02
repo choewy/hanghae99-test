@@ -1,8 +1,8 @@
 # 항해99 테스트
 
-## .env
+## versions
 
-```
-MONGO_URI
-FLASK_PORT
-```
+- version0 : using MongoDB
+- version1 : using json
+- version2 : using memory(variables)
+
