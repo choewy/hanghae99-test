@@ -9,28 +9,12 @@ class DB:
     def __init__(self) -> None:
         self.rows = [
             {
-                "_id": "0",
-                "title": "성장을 위한 기록장",
-                "description": "프로그래밍 공부를 하며 습득한 정보와 회고를 기록하는 기술 블로그",
-                "image": "https://tistory1.daumcdn.net/tistory/4516741/attach/ea4d2cd059eb42fda36d9a3989d5a401",
-                "url": "https://choewy.tistory.com/",
-                "comment": "내 블로그"
-            },
-            {
                 "_id": "1",
-                "title": "스파르타코딩클럽",
-                "description": "왕초보 8주 완성! 웹/앱/게임 빠르게 배우고 내것을 만드세요!",
-                "image": "https://static.spartacodingclub.kr/043a96e34c19/static/css/images/ogimage2.jpg?t=1633489494",
-                "url": "https://spartacodingclub.kr/",
-                "comment": "스파르타 코딩클럽"
-            },
-            {
-                "_id": "2",
-                "title": "네이버",
-                "description": "네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요",
-                "image": "https://s.pstatic.net/static/www/mobile/edit/2016/0705/mobile_212852414260.png",
-                "url": "https://naver.com",
-                "comment": "123"
+                "title": "GitHub: Where the world builds software",
+                "description": "GitHub is where over 73 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and feat...",
+                "image": "https://github.githubassets.com/images/modules/site/social-cards/github-social.png",
+                "url": "https://www.github.com/",
+                "comment": "깃헙!"
             }
         ]
         self.len = len(self.rows)
