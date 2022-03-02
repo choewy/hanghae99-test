@@ -6,16 +6,16 @@ services:
     volumes:
       - ./db:/data/db
     ports:
-      - "7000:27017"
+      - 7000:27017
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
 
-#  app:
-#    depends_on:
-#      - mongo
-#    build: ./src/
-#    restart: always
-#    ports:
-#      - 5000:5000
+  app:
+    depends_on:
+      - mongo
+    build: ./src/
+    restart: always
+    ports:
+      - 5000:5000
