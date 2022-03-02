@@ -2,8 +2,6 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 
-# mongodb://root:password@localhost:7000/admin
-
 class MongoDB:
     def __init__(self, db="dbsparta") -> None:
         self.client = MongoClient(
