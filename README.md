@@ -22,7 +22,7 @@
 
 ## docker-compose
 
-### version0
+- version0
 
 ```
 $ cd version0
@@ -30,7 +30,7 @@ $ docker network create --gateway 172.0.0.1 --subnet 172.0.0.0/16 fmongo
 $ docker-compose up -d
 ```
 
-### version1 or version2
+- version1 or version2
 
 ```
 $ cd version1 [or verions2]
