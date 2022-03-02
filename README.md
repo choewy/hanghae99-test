@@ -2,7 +2,11 @@
 
 ## IDE
 
-- Visual Studio Code
+- Visual Studio Code(venv not used)
+
+## server
+
+- Oracle Cloud : Linux(CentOS 8), Docker(compose)
 
 ## condition
 
