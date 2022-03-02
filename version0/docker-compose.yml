@@ -1,5 +1,4 @@
 # compose version v2.2.3
-# docker network create --gateway 172.0.0.1 --subnet 172.0.0.0/16 fmongo
 
 version: "3.7"
 
